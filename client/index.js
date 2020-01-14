@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
   }
 
   searchButton.addEventListener('click', () => {
-    const query = document.querySelector('.container__display__search-input');
+    const query = document.querySelector('.container__display__search-input').value;
     if (query) {
       console.log(query)
       // if there is something input in input field on press, search the weather and get the image
