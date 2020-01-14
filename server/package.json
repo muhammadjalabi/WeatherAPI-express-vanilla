@@ -1,0 +1,31 @@
+{
+  "name": "hometask-weatherapi",
+  "version": "1.0.0",
+  "description": "* Create and setup an express server with 2 endpoints, one with /nearby and one with /search *",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appliedtechnology/hometask-weatherAPI.git"
+  },
+  "author": "School of applied technology",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appliedtechnology/hometask-weatherAPI/issues"
+  },
+  "homepage": "https://github.com/appliedtechnology/hometask-weatherAPI#readme",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.4",
+    "require": "^2.4.20"
+  },
+  "dependencies": {
+    "require": "^2.4.20"
+  }
+}
