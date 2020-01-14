@@ -1,7 +1,7 @@
 {
-  "name": "hometask-weatherapi",
+  "name": "weatherapi",
   "version": "1.0.0",
-  "description": "* Create and setup an express server with 2 endpoints, one with /nearby and one with /search *",
+  "description": "Let's create and setup an express server with 2 endpoints, one with /nearby and one with /search *",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appliedtechnology/hometask-weatherAPI.git"
+    "url": "git+https://github.com/muhammadjalabi/WeatherAPI-express-vanilla.git"
   },
-  "author": "School of applied technology",
+  "author": "M Jalabi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/appliedtechnology/hometask-weatherAPI/issues"
+    "url": "https://github.com/muhammadjalabi/WeatherAPI-express-vanilla/issues"
   },
-  "homepage": "https://github.com/appliedtechnology/hometask-weatherAPI#readme",
+  "homepage": "https://github.com/muhammadjalabi/WeatherAPI-express-vanilla",
   "devDependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

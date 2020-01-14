@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Weather app</title>
+  <script type="module" src="index.js"></script>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="main">
+    <div class="container">
+      <div class="container__display">
+        <div class="container__display__search">
+          <input type="text" class="container__display__search-input" placeholder="Enter a city" required>
+          <button type="submit" class="container__display__search-button">Get the weather!</button>
+        </div>
+
+        <div class="container__display__result">
+          <p class="container__display__result__location-country"></p>
+          <img src="" alt="an icon of the weather" class="container__display__result__weather-icon" />
+          <p class="container__display__result__temp-degree"></p>
+          <p class="container__display__result__feels-like"></p>
+          <p class="container__display__result__temp-highestlowest"></p>
+          <p class="container__display__result__temp-desc"></p>
+          <div class="container__display__result__city-image-holder"></div>
+        </div>
+      </div>
+
+      <div class="container__display__forecast">
+        <h2 class="container__display__forecast__heading">3 day forecast!</h2>
+        <div class="container__display__forecast__result">
+          <p class="container__display__forecast__result__day-1"></p>
+          <p class="container__display__forecast__result__day-2"></p>
+          <p class="container__display__forecast__result__day-3"></p>
+          <p class="container__display__forecast__result__temp-desc container__display__result__temp-desc"></p>
+          <img src="" alt="an icon of the weather"
+            class="container__display__forecast__result__weather-icon container__display__result__weather-icon">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
