@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const port = process.env.serverPORT;
 const apiKeyOWM = process.env.owmApiKey;
 
-app.use(express.static('client'));
+app.use(express.static('../client'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
