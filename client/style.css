@@ -8,6 +8,11 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+/* ÄNDRA DENNA SEN */
+.fc-date-text{
+    font-size: 1.1rem
+}
+
 
 .container__display__search-button{
     cursor: pointer;

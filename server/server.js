@@ -32,5 +32,22 @@ app.get('/nearby', (request, response) => {
     });
 })
 
+app.get('/search/:city', (request, response) => {
+  try {
+    const city = request.params.city;
+    console.log(city)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKeyOWM}`)
+      .then(res => res.json())
+      .then(data => {
+        response
+          .set({ 'content-type': 'application/json' })
+          .status(200)
+          .json(data)
+      })
+  } catch (error) {
+    response.status(500).json({ message: error.message });
+  }
+})
+
 
 app.listen(port, () => console.log('Server listening on port ' + port));

@@ -1,3 +1,4 @@
+import { printResult, beautifyPage } from './helpers.js'
 
 window.addEventListener('load', () => {
   const searchButton = document.querySelector('.container__display__search-button');
@@ -9,7 +10,9 @@ window.addEventListener('load', () => {
       fetch(apiNearby)
         .then(response => response.json())
         .then(data => {
-          console.log(data)
+          printResult(data)
+          beautifyPage(data)
+          console.log('works?', data)
         })
     })
   }
@@ -18,13 +21,18 @@ window.addEventListener('load', () => {
     const apiSearchCity = `/search/${query}`;
     fetch(apiSearchCity)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        printResult(data)
+        beautifyPage(data)
+      })
   }
 
   searchButton.addEventListener('click', () => {
     const query = document.querySelector('.container__display__search-input').value;
     if (query) {
       console.log(query)
+      getWeather(query)
+      beautifyPage(data)
       // if there is something input in input field on press, search the weather and get the image
     }
   })
