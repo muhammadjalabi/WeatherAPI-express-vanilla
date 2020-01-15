@@ -26,9 +26,9 @@ body {
 
 }
 
-.container__display__forecast__result__day-1, .container__display__forecast__result__day-2, .container__display__forecast__result__day--3 {
+/* .container__display__forecast__result__day-1, .container__display__forecast__result__day-2, .container__display__forecast__result__day--3 {
     margin: 5px;
-}
+} */
 
 .container__display__forecast__result__day-2 {
     border-left:3px solid rgba(255, 255, 255, 0.35);

@@ -26,28 +26,53 @@ app.get('/nearby', (request, response) => {
   fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${apiKeyOWM}`)
     .then(res => res.json())
     .then(data => {
-      response
-        .status(200)
-        .json(data)
+      fetch(`https://source.unsplash.com/360x300/?${data.name}`)
+        .then(res => {
+          data.imageURL = res.url
+          console.log('data pås erversidan ', data)
+          return response
+            .status(200)
+            .json(data)
+        })
     });
 })
 
 app.get('/search/:city', (request, response) => {
-  try {
-    const city = request.params.city;
-    console.log(city)
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKeyOWM}`)
-      .then(res => res.json())
-      .then(data => {
-        response
-          .set({ 'content-type': 'application/json' })
-          .status(200)
-          .json(data)
-      })
-  } catch (error) {
-    response.status(500).json({ message: error.message });
-  }
+  const city = request.params.city;
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKeyOWM}`)
+    .then(res => res.json())
+    .then(data => {
+      fetch(`https://source.unsplash.com/360x300/?${city}`)
+        .then(res => {
+          data.imageURL = res.url
+          response
+            .status(200)
+            .json(data)
+        });
+    })
+
 })
 
+// app.get('/search/:city', (request, response) => {
+//   try {
+//     const city = request.params.city;
+//     const fetchOwm =
+//       fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKeyOWM}`).then(res => res.json());
+//     const fetchUnsplash = fetch(`https://source.unsplash.com/360x300/?${city}`).then(res => res.url);
+//     const newData = { 'data': {} };
+//     Promise.all([fetchOwm, fetchUnsplash])
+//       .then(values => {
+//         newData['data'] = values[0]
+//         newData.data['imageURL'] = values[1]
+//         response
+//           .status(200)
+//           .json(newData)
+//       })
+//   } catch (error) {
+//     response.status(500).json({ message: error.message });
+//   }
+// })
 
-app.listen(port, () => console.log('Server listening on port ' + port));
+
+
+app.listen(port, () => console.log(`Server listening on port ${port}`));
